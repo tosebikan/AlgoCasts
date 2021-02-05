@@ -6,6 +6,27 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
+// using reduce
+function reverse(str) {
+  // split the string into an array
+
+  return str.split("").reduce((rev, char) => char + rev, "");
+  // the initial value is ""
+}
+
+module.exports = reverse;
+
+// // using for loop
+// function reverse(str) {
+//   let reverse = "";
+//
+//   for (let char of str) {
+//     reverse = char + reverse;
+//   }
+//
+//   return reverse;
+// }
+
 // using pointers
 // function reverse(str) {
 //   let strArray = str.split("");
@@ -24,13 +45,11 @@
 // }
 
 // looping through
-function reverse(str) {
-  let reverse = "";
-  for (let i = str.length - 1; i >= 0; i--) {
-    reverse = reverse + str[i];
-  }
-  console.log({ reverse });
-  return reverse;
-}
-
-module.exports = reverse;
+// function reverse(str) {
+//   let reverse = "";
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     reverse = reverse + str[i];
+//   }
+//   console.log({ reverse });
+//   return reverse;
+// }

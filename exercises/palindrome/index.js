@@ -7,15 +7,30 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-// using reduce to reverse & comparing to original word
+// using array.every method to compare each element with it s mirrored element
 function palindrome(str) {
-  let word = str;
-  let reverse = str.split("").reduce((rev, char) => {
-    return char + rev;
-  }, "");
-  // console.log({ word, reverse });
-
-  return word === reverse ? true : false;
+  return str.split("").every((char, i) => char === str[str.length - i - 1]);
 }
 
 module.exports = palindrome;
+
+// using array method to reverse
+// function palindrome(str) {
+//   let reverse = str
+//     .split("")
+//     .reverse()
+//     .join("");
+//
+//   return str === reverse;
+// }
+
+// // using reduce to reverse & comparing to original word
+// function palindrome(str) {
+//   let word = str;
+//   let reverse = str.split("").reduce((rev, char) => {
+//     return char + rev;
+//   }, "");
+//   // console.log({ word, reverse });
+//
+//   return word === reverse ? true : false;
+// }

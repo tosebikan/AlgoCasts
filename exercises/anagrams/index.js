@@ -13,18 +13,17 @@
 // first approach
 function helper(string) {
   //remove punctuations make lower case & remove spaces
-  const punctuations = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
-  let newStr = string
-    .replace(punctuations, "")
-    .toLowerCase()
-    .split(" ")
-    .join("");
+  // const punctuations = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
 
-  // sort
-  return newStr
+  // remove all punctuation & spaces
+  const regex = /[^\w]/g;
+
+  return (newStr = string
+    .replace(regex, "")
+    .toLowerCase()
     .split("")
     .sort()
-    .join("");
+    .join(""));
 }
 
 function anagrams(stringA, stringB) {

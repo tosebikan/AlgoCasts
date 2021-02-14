@@ -8,6 +8,30 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+// remove spaces, punctuations & convert to lower case
+
+// first approach
+function helper(string) {
+  //remove punctuations make lower case & remove spaces
+  const punctuations = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
+  let newStr = string
+    .replace(punctuations, "")
+    .toLowerCase()
+    .split(" ")
+    .join("");
+
+  // sort
+  return newStr
+    .split("")
+    .sort()
+    .join("");
+}
+
+function anagrams(stringA, stringB) {
+  let newStringA = helper(stringA);
+  let newStringB = helper(stringB);
+
+  return newStringA === newStringB ? true : false;
+}
 
 module.exports = anagrams;

@@ -17,6 +17,21 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+// first attempt with a nested loop
+function steps(n) {
+  let arr = [];
+
+  for (let i = 1; i <= n; i++) {
+    let str = "";
+
+    for (j = 1; j <= i; j++) {
+      str += "#";
+    }
+
+    console.log(str.padEnd(n));
+  }
+}
+
+steps(2);
 
 module.exports = steps;

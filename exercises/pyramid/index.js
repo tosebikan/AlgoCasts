@@ -15,21 +15,19 @@
 //       '#####'
 
 function pyramid(n) {
-  // loop though
-  let midpoint = Math.floor((2 * n - 1) / 2);
-  for (let row = 0; row < n; row++) {
-    let level = "";
-
-    // loop through the column in row
-    for (let column = 0; column < 2 * n - 1; column++) {
-      // get midpoint
-      if (midpoint - row <= column && midpoint + row >= column) {
-        level += "#";
+  let max = 2 * n - 1;
+  let midpoint = Math.floor(max / 2);
+  for (let i = 0; i < n; i++) {
+    let step = "";
+    for (let j = 0; j < max; j++) {
+      if (midpoint - i <= j && midpoint + i >= j) {
+        step += "#";
       } else {
-        level += " ";
+        step += " ";
       }
     }
-    console.log(level);
+
+    console.log(step);
   }
 }
 

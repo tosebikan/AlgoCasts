@@ -14,24 +14,50 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {
-  let max = 2 * n - 1;
-  let midpoint = Math.floor(max / 2);
-  for (let i = 0; i < n; i++) {
-    let step = "";
-    for (let j = 0; j < max; j++) {
-      if (midpoint - i <= j && midpoint + i >= j) {
-        step += "#";
-      } else {
-        step += " ";
-      }
-    }
-
-    console.log(step);
+// recursive way
+function pyramid(n, row = 0, step = "") {
+  // base case
+  if (row === n) {
+    return;
   }
+
+  // print step at the end of column
+  if (step.length === 2 * n - 1) {
+    console.log(step);
+    pyramid(n, row + 1);
+    return;
+  }
+
+  // get midpoint of width
+  const midpoint = Math.floor((2 * n - 1) / 2);
+  let add;
+  if (midpoint - row <= step.length && midpoint + row >= step.length) {
+    add = "#";
+  } else {
+    add = " ";
+  }
+
+  pyramid(n, row, step + add);
 }
 
 module.exports = pyramid;
+
+// function pyramid(n) {
+//   let max = 2 * n - 1;
+//   let midpoint = Math.floor(max / 2);
+//   for (let i = 0; i < n; i++) {
+//     let step = "";
+//     for (let j = 0; j < max; j++) {
+//       if (midpoint - i <= j && midpoint + i >= j) {
+//         step += "#";
+//       } else {
+//         step += " ";
+//       }
+//     }
+//
+//     console.log(step);
+//   }
+// }
 
 // function pyramid(n) {
 //   // first loop through the number

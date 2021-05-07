@@ -8,48 +8,48 @@
 
 // using reduce
 function reverse(str) {
-  // split the string into an array
+  // loop through the string;
+  // create reversed variable push the string into it
+  // return reversed
 
-  return str.split("").reduce((rev, char) => char + rev, "");
-  // the initial value is ""
+  // using reduce
+
+  return str.split("").reduce((str, char) => char + str, "");
+  // starts with empty quote
 }
 
 module.exports = reverse;
 
-// // using for loop
+// splitting into two
 // function reverse(str) {
-//   let reverse = "";
+//   // loop through the string;
+//   // create reversed variable push the string into it
+//   // return reversed
 //
-//   for (let char of str) {
-//     reverse = char + reverse;
-//   }
-//
-//   return reverse;
-// }
-
-// using pointers
-// function reverse(str) {
-//   let strArray = str.split("");
-//   console.log({ strArray });
+//   // splitting in half
+//   let arr = str.split("");
 //   let start = 0;
-//   let end = strArray.length - 1;
+//   let end = arr.length;
 //
-//   while (start <= end) {
-//     let temp = strArray[start];
-//     strArray[start] = strArray[end];
-//     strArray[end] = temp;
+//   while (start < end) {
+//     var temp = arr[start];
+//     arr[start] = arr[end];
+//     arr[end] = temp;
 //     start++;
 //     end--;
 //   }
-//   return strArray.join("");
+//   return arr.join("");
 // }
 
-// looping through
+// using a simple loop
 // function reverse(str) {
-//   let reverse = "";
-//   for (let i = str.length - 1; i >= 0; i--) {
-//     reverse = reverse + str[i];
+//   // loop through the string;
+//   // create reversed variable push the string into it
+//   // return reversed
+//
+//   var reversed = "";
+//   for (let char of str) {
+//     reversed = char + reversed;
 //   }
-//   console.log({ reverse });
-//   return reverse;
+//   return reversed;
 // }

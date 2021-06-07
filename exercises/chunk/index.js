@@ -11,13 +11,11 @@
 // using slice
 function chunk(array, size) {
   let chunked = [];
-
-  let index = 0;
-
-  while (index < array.length) {
-    chunked.push(array.slice(index, index + size));
-    index += size;
+  for (let i = 0; i < array.length; i += size) {
+    let sub = array.slice(i, i + size);
+    chunked.push(sub);
   }
+
   return chunked;
 }
 
